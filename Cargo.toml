@@ -1,6 +1,12 @@
 [package]
 name = "rust-sync-app"
 version = "0.1.0"
-edition = "2024"
+edition = "2021"
 
 [dependencies]
+tokio = { version = "1", features = ["full"] }
+aws-config = "1"
+aws-sdk-s3 = "1"
+toml = "0.8"
+serde = { version = "1", features = ["derive"] }
+anyhow = "1"

@@ -1,0 +1,13 @@
+endpoint = "https://s3.amazonaws.com"
+token = "your-s3-secret-key"
+remote_path = "my-bucket/test-folder"
+local_path = "./local_data"
+log_path = "./sync.log"
+max_file_age_ms = 86400000
+delete_old_files = false
+sync_mode = "pull"
+polling_interval_ms = 60000
+timeout_ms = 300000
+match_regex = ".*"
+refetch_deleted_file = true
+version = 1
