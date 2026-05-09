@@ -10,3 +10,4 @@ aws-sdk-s3 = "1"
 toml = "0.8"
 serde = { version = "1", features = ["derive"] }
 anyhow = "1"
+fs4 = "0.9"

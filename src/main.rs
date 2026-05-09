@@ -11,11 +11,9 @@ fn main() -> Result<()> {
     println!("✅ Config loaded successfully!");
     println!("Sync mode: {}", config.sync_mode);
     println!("Local path: {:?}", config.local_path);
+    println!("Polling interval: {} ms", config.polling_interval_ms);
     
     watchdog::run_with_watchdog(&config);
-    
-    // Пока вызываем синхронизацию как обычную функцию
-    sync::run_sync_cycle(&config)?;
     
     Ok(())
 }
