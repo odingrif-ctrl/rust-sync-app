@@ -4,7 +4,7 @@ use std::fs;
 use std::path::{Path, PathBuf};
 use std::time::SystemTime;
 
-/// Рекурсивно обходит папку и возвращает все файлы с их метаданными (размер, время модификации)
+//// Рекурсивно обходит папку и возвращает все файлы с их метаданными (размер, время модификации)
 fn scan_directory(dir: &Path) -> Result<Vec<(PathBuf, SystemTime, u64)>> {
     let mut files = Vec::new();
     if !dir.exists() {
@@ -13,18 +13,19 @@ fn scan_directory(dir: &Path) -> Result<Vec<(PathBuf, SystemTime, u64)>> {
         return Ok(files);
     }
 
-    for entry in fs::read_dir(dir)
-        .with_context(|| format!("Failed to read directory: {:?}", dir))?
+    // Используем walkdir вместо ручной рекурсии (надёжнее)
+    for entry in walkdir::WalkDir::new(dir)
+        .into_iter()
+        .filter_entry(|e| e.file_type().is_file() || e.file_type().is_dir())
     {
-        let entry = entry?;
+        let entry = entry.with_context(|| format!("Failed to read directory entry in {:?}", dir))?;
         let path = entry.path();
         if path.is_file() {
             let metadata = fs::metadata(&path)?;
             let modified = metadata.modified()?;
             let size = metadata.len();
-            files.push((path, modified, size));
+            files.push((path.to_path_buf(), modified, size));
         }
-        // TODO: рекурсивно обходить подпапки (добавим позже)
     }
     Ok(files)
 }
