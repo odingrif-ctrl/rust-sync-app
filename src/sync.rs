@@ -1,11 +1,14 @@
-// src/sync.rs — локальная синхронизация (pull/push) с атомарным копированием
+// src/sync.rs
 use anyhow::{Context, Result};
+use regex::Regex;
 use std::fs;
 use std::path::{Path, PathBuf};
 use std::time::SystemTime;
+use walkdir::WalkDir;
+use crate::logger::Logger;
 
-//// Рекурсивно обходит папку и возвращает все файлы с их метаданными (размер, время модификации)
-fn scan_directory(dir: &Path) -> Result<Vec<(PathBuf, SystemTime, u64)>> {
+/// Рекурсивно обходит папку и возвращает все файлы, подходящие под regex
+fn scan_directory(dir: &Path, regex: &Regex, logger: &Logger) -> Result<Vec<(PathBuf, SystemTime, u64)>> {
     let mut files = Vec::new();
     if !dir.exists() {
         fs::create_dir_all(dir)
@@ -13,121 +16,151 @@ fn scan_directory(dir: &Path) -> Result<Vec<(PathBuf, SystemTime, u64)>> {
         return Ok(files);
     }
 
-    // Используем walkdir вместо ручной рекурсии (надёжнее)
-    for entry in walkdir::WalkDir::new(dir)
-        .into_iter()
-        .filter_entry(|e| e.file_type().is_file() || e.file_type().is_dir())
-    {
-        let entry = entry.with_context(|| format!("Failed to read directory entry in {:?}", dir))?;
+    for entry in WalkDir::new(dir) {
+        let entry = entry.with_context(|| format!("Failed to read entry in {:?}", dir))?;
         let path = entry.path();
         if path.is_file() {
+            let file_name = path.file_name().unwrap_or_default().to_string_lossy();
+            if !regex.is_match(&file_name) {
+                continue;
+            }
             let metadata = fs::metadata(&path)?;
             let modified = metadata.modified()?;
             let size = metadata.len();
             files.push((path.to_path_buf(), modified, size));
+            logger.log(&format!("   Found file: {:?}", path));
         }
     }
     Ok(files)
 }
 
-/// Копирует файл атомарно: во временный файл -> fsync -> переименование
-fn atomic_copy(src: &Path, dst: &Path) -> Result<()> {
-    // 1. Создаём временный файл рядом с целевым
+/// Атомарное копирование с fsync
+fn atomic_copy(src: &Path, dst: &Path, logger: &Logger) -> Result<()> {
     let temp_path = dst.with_extension("tmp");
-    
-    // 2. Копируем содержимое
     fs::copy(src, &temp_path)
         .with_context(|| format!("Failed to copy from {:?} to {:?}", src, temp_path))?;
-    
-    // 3. Принудительно сбрасываем данные на диск (атомарность)
     let temp_file = fs::File::open(&temp_path)?;
     temp_file.sync_all()?;
-    
-    // 4. Переименовываем (атомарная операция в большинстве файловых систем)
     fs::rename(&temp_path, dst)
         .with_context(|| format!("Failed to rename {:?} to {:?}", temp_path, dst))?;
-    
+    logger.log(&format!("   Atomic copy: {:?} -> {:?}", src.file_name().unwrap(), dst.file_name().unwrap()));
     Ok(())
 }
 
-/// Синхронизирует две папки: source -> target (только новые/изменённые файлы)
-/// Удаляет в target файлы, которых нет в source (если delete_orphans = true)
+/// Удаляет старые файлы в target_dir, если включено
+fn delete_old_files_in_dir(target_dir: &Path, max_age_ms: u64, delete_old: bool, logger: &Logger) -> Result<()> {
+    if !delete_old {
+        return Ok(());
+    }
+    let now = SystemTime::now();
+    for entry in WalkDir::new(target_dir) {
+        let entry = entry?;
+        let path = entry.path();
+        if path.is_file() {
+            let metadata = fs::metadata(path)?;
+            if let Ok(modified) = metadata.modified() {
+                if let Ok(age) = now.duration_since(modified) {
+                    if age.as_millis() > max_age_ms as u128 {
+                        logger.log(&format!("   Deleting old file: {:?} (age: {} ms)", path, age.as_millis()));
+                        fs::remove_file(path)?;
+                    }
+                }
+            }
+        }
+    }
+    Ok(())
+}
+
+/// Синхронизирует source_dir -> target_dir
 fn sync_direction(
     source_dir: &Path,
     target_dir: &Path,
     delete_orphans: bool,
+    regex: &Regex,
+    max_age_ms: u64,
+    delete_old: bool,
+    logger: &Logger,
 ) -> Result<()> {
-    // Сканируем обе папки
-    let source_files = scan_directory(source_dir)?;
-    let target_files = scan_directory(target_dir)?;
+    logger.log(&format!("   Scanning source: {:?}", source_dir));
+    let source_files = scan_directory(source_dir, regex, logger)?;
+    let target_files = scan_directory(target_dir, regex, logger)?;
     
-    // Преобразуем target в карту для быстрого поиска: относительный путь -> (modified, size)
     let mut target_map = std::collections::HashMap::new();
-    for (path, modified, size) in target_files {
+    for (path, modified, _) in target_files {
         if let Ok(rel_path) = path.strip_prefix(target_dir) {
-            target_map.insert(rel_path.to_path_buf(), (modified, size));
+            target_map.insert(rel_path.to_path_buf(), modified);
         }
     }
     
-    // Для каждого файла в source: копируем, если новее или отсутствует
-    for (src_path, src_modified, _src_size) in source_files {
-        let rel_path = src_path.strip_prefix(source_dir)
-            .with_context(|| format!("Failed to strip prefix from {:?}", src_path))?;
+    // Копируем новые/изменённые
+    for (src_path, src_modified, _) in source_files {
+        let rel_path = src_path.strip_prefix(source_dir)?;
         let target_path = target_dir.join(rel_path);
-        
-        // Создаём целевую папку, если её нет
         if let Some(parent) = target_path.parent() {
             fs::create_dir_all(parent)?;
         }
-        
         let need_copy = match target_map.get(rel_path) {
-            Some((target_modified, _target_size)) => {
-                // Копируем, если исходник новее
-                src_modified > *target_modified
-            }
-            None => true, // Файла нет в target
+            Some(target_modified) => src_modified > *target_modified,
+            None => true,
         };
-        
         if need_copy {
-            println!("   Copying: {:?} -> {:?}", src_path.file_name().unwrap(), rel_path);
-            atomic_copy(&src_path, &target_path)?;
+            logger.log(&format!("   Copying: {:?} -> {:?}", src_path.file_name().unwrap(), rel_path));
+            atomic_copy(&src_path, &target_path, logger)?;
         }
     }
     
-    // Удаляем файлы в target, которых нет в source (осиротевшие)
+    // Удаляем осиротевшие файлы в target
     if delete_orphans {
         for (rel_path, _) in target_map {
             let source_path = source_dir.join(&rel_path);
             if !source_path.exists() {
                 let target_path = target_dir.join(&rel_path);
-                println!("   Deleting orphan: {:?}", rel_path);
-                fs::remove_file(&target_path)
-                    .with_context(|| format!("Failed to delete {:?}", target_path))?;
+                logger.log(&format!("   Deleting orphan: {:?}", rel_path));
+                fs::remove_file(&target_path)?;
             }
         }
     }
+    
+    // Удаляем старые файлы в target_dir
+    delete_old_files_in_dir(target_dir, max_age_ms, delete_old, logger)?;
     
     Ok(())
 }
 
 /// Основная функция синхронизации (вызывается из watchdog)
-pub fn run_sync_cycle_safe(local_path: &PathBuf, remote_path: &str, sync_mode: &str) -> Result<()> {
-    let local = local_path.as_path();
-    let remote = Path::new(remote_path);
+pub fn run_sync_cycle_safe(
+    local_path: &PathBuf,
+    remote_path: &str,
+    sync_mode: &str,
+    logger: &Logger,
+) -> Result<()> {
+    let config = crate::config::Config::from_file()?;
+    let regex = Regex::new(&config.match_regex)?;
     
-    println!("   Local:  {:?}", local);
-    println!("   Remote: {:?}", remote);
-    println!("   Mode:   {}", sync_mode);
+    logger.log(&format!("   Local: {:?}", local_path));
+    logger.log(&format!("   Remote: {:?}", remote_path));
+    logger.log(&format!("   Mode: {}", sync_mode));
+    logger.log(&format!("   Regex: {}", config.match_regex));
     
     match sync_mode {
-        "pull" => {
-            // Копируем из remote в local, удаляем orphan в local
-            sync_direction(remote, local, true)?;
-        }
-        "push" => {
-            // Копируем из local в remote, удаляем orphan в remote
-            sync_direction(local, remote, true)?;
-        }
+        "pull" => sync_direction(
+            Path::new(remote_path),
+            local_path,
+            true,
+            &regex,
+            config.max_file_age_ms,
+            config.delete_old_files,
+            logger,
+        )?,
+        "push" => sync_direction(
+            local_path,
+            Path::new(remote_path),
+            true,
+            &regex,
+            config.max_file_age_ms,
+            config.delete_old_files,
+            logger,
+        )?,
         _ => anyhow::bail!("Unknown sync_mode: {}", sync_mode),
     }
     

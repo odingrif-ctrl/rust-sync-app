@@ -1,0 +1,302 @@
+Test
+[2026-05-14 01:25:56] App started
+[2026-05-14 01:25:56] Sync mode: pull
+[2026-05-14 01:25:56] Watchdog starting with PID-file lock
+[2026-05-14 01:25:56] Single instance check passed (PID: 12719)
+[2026-05-14 01:25:56] Sync cycle started at SystemTime { tv_sec: 1778714756, tv_nsec: 185952105 }
+[2026-05-14 01:25:56]    Local: "./local_data"
+[2026-05-14 01:25:56]    Remote: "./remote_data"
+[2026-05-14 01:25:56]    Mode: pull
+[2026-05-14 01:25:56]    Regex: .*
+[2026-05-14 01:25:56]    Scanning source: "./remote_data"
+[2026-05-14 01:25:56] Sync cycle completed successfully
+[2026-05-14 01:25:56] Waiting 30000 ms...
+[2026-05-14 01:31:42] App started
+[2026-05-14 01:31:42] Sync mode: pull
+[2026-05-14 01:31:42] Watchdog starting with PID-file lock
+[2026-05-14 01:31:42] Single instance check passed (PID: 13349)
+[2026-05-14 01:31:42] Sync cycle started at SystemTime { tv_sec: 1778715102, tv_nsec: 447812426 }
+[2026-05-14 01:31:42]    Local: "./local_data"
+[2026-05-14 01:31:42]    Remote: "./remote_data"
+[2026-05-14 01:31:42]    Mode: pull
+[2026-05-14 01:31:42]    Regex: .*\.txt$
+[2026-05-14 01:31:42]    Scanning source: "./remote_data"
+[2026-05-14 01:31:42] Sync cycle completed successfully
+[2026-05-14 01:31:42] Waiting 30000 ms...
+[2026-05-14 01:32:12] Sync cycle started at SystemTime { tv_sec: 1778715132, tv_nsec: 449580411 }
+[2026-05-14 01:32:12]    Local: "./local_data"
+[2026-05-14 01:32:12]    Remote: "./remote_data"
+[2026-05-14 01:32:12]    Mode: pull
+[2026-05-14 01:32:12]    Regex: .*\.txt$
+[2026-05-14 01:32:12]    Scanning source: "./remote_data"
+[2026-05-14 01:32:12] Sync cycle completed successfully
+[2026-05-14 01:32:12] Waiting 30000 ms...
+[2026-05-14 01:34:51] App started
+[2026-05-14 01:34:51] Sync mode: pull
+[2026-05-14 01:34:51] Watchdog starting with PID-file lock
+[2026-05-14 01:34:51] Single instance check passed (PID: 13589)
+[2026-05-14 01:34:51] Sync cycle started at SystemTime { tv_sec: 1778715291, tv_nsec: 615045893 }
+[2026-05-14 01:34:51]    Local: "./local_data"
+[2026-05-14 01:34:51]    Remote: "./remote_data"
+[2026-05-14 01:34:51]    Mode: pull
+[2026-05-14 01:34:51]    Regex: .*\.txt$
+[2026-05-14 01:34:51]    Scanning source: "./remote_data"
+[2026-05-14 01:34:51] Sync cycle completed successfully
+[2026-05-14 01:34:51] Waiting 30000 ms...
+[2026-05-14 01:35:21] Sync cycle started at SystemTime { tv_sec: 1778715321, tv_nsec: 616951300 }
+[2026-05-14 01:35:21]    Local: "./local_data"
+[2026-05-14 01:35:21]    Remote: "./remote_data"
+[2026-05-14 01:35:21]    Mode: pull
+[2026-05-14 01:35:21]    Regex: .*\.txt$
+[2026-05-14 01:35:21]    Scanning source: "./remote_data"
+[2026-05-14 01:35:21] Sync cycle completed successfully
+[2026-05-14 01:35:21] Waiting 30000 ms...
+[2026-05-14 01:36:08] App started
+[2026-05-14 01:36:08] Sync mode: pull
+[2026-05-14 01:36:08] Watchdog starting with PID-file lock
+[2026-05-14 01:36:08] Single instance check passed (PID: 13722)
+[2026-05-14 01:36:08] Sync cycle started at SystemTime { tv_sec: 1778715368, tv_nsec: 120022256 }
+[2026-05-14 01:36:08]    Local: "./local_data"
+[2026-05-14 01:36:08]    Remote: "./remote_data"
+[2026-05-14 01:36:08]    Mode: pull
+[2026-05-14 01:36:08]    Regex: .*\.txt$
+[2026-05-14 01:36:08]    Scanning source: "./remote_data"
+[2026-05-14 01:36:08] Sync cycle completed successfully
+[2026-05-14 01:36:08] Waiting 30000 ms...
+[2026-05-14 01:36:38] Sync cycle started at SystemTime { tv_sec: 1778715398, tv_nsec: 121804526 }
+[2026-05-14 01:36:38]    Local: "./local_data"
+[2026-05-14 01:36:38]    Remote: "./remote_data"
+[2026-05-14 01:36:38]    Mode: pull
+[2026-05-14 01:36:38]    Regex: .*\.txt$
+[2026-05-14 01:36:38]    Scanning source: "./remote_data"
+[2026-05-14 01:36:38] Sync cycle completed successfully
+[2026-05-14 01:36:38] Waiting 30000 ms...
+[2026-05-14 01:36:41] App started
+[2026-05-14 01:36:41] Sync mode: pull
+[2026-05-14 01:36:41] Watchdog starting with PID-file lock
+[2026-05-14 01:36:41] Another instance is already running (PID: 13722)
+[2026-05-14 01:39:24] App started
+[2026-05-14 01:39:24] Sync mode: pull
+[2026-05-14 01:39:24] Watchdog starting with PID-file lock
+[2026-05-14 01:39:24] Single instance check passed (PID: 14108)
+[2026-05-14 01:39:24] Sync cycle started at SystemTime { tv_sec: 1778715564, tv_nsec: 810499422 }
+[2026-05-14 01:39:24]    Local: "./local_data"
+[2026-05-14 01:39:24]    Remote: "./remote_data"
+[2026-05-14 01:39:24]    Mode: pull
+[2026-05-14 01:39:24]    Regex: .*
+[2026-05-14 01:39:24]    Scanning source: "./remote_data"
+[2026-05-14 01:39:24] Sync cycle completed successfully
+[2026-05-14 01:39:24] Waiting 30000 ms...
+[2026-05-14 01:39:54] Sync cycle started at SystemTime { tv_sec: 1778715594, tv_nsec: 812281701 }
+[2026-05-14 01:39:54]    Local: "./local_data"
+[2026-05-14 01:39:54]    Remote: "./remote_data"
+[2026-05-14 01:39:54]    Mode: pull
+[2026-05-14 01:39:54]    Regex: .*
+[2026-05-14 01:39:54]    Scanning source: "./remote_data"
+[2026-05-14 01:39:54] Sync cycle completed successfully
+[2026-05-14 01:39:54] Waiting 30000 ms...
+[2026-05-14 01:41:11] App started
+[2026-05-14 01:41:11] Sync mode: pull
+[2026-05-14 01:41:11] Watchdog starting with PID-file lock
+[2026-05-14 01:41:11] Single instance check passed (PID: 14231)
+[2026-05-14 01:41:11] Sync cycle started at SystemTime { tv_sec: 1778715671, tv_nsec: 866394110 }
+[2026-05-14 01:41:11]    Local: "./local_data"
+[2026-05-14 01:41:11]    Remote: "./remote_data"
+[2026-05-14 01:41:11]    Mode: pull
+[2026-05-14 01:41:11]    Regex: .*\.txt$
+[2026-05-14 01:41:11]    Scanning source: "./remote_data"
+[2026-05-14 01:41:11] Sync cycle completed successfully
+[2026-05-14 01:41:11] Waiting 10000 ms...
+[2026-05-14 01:41:21] Sync cycle started at SystemTime { tv_sec: 1778715681, tv_nsec: 868015840 }
+[2026-05-14 01:41:21]    Local: "./local_data"
+[2026-05-14 01:41:21]    Remote: "./remote_data"
+[2026-05-14 01:41:21]    Mode: pull
+[2026-05-14 01:41:21]    Regex: .*\.txt$
+[2026-05-14 01:41:21]    Scanning source: "./remote_data"
+[2026-05-14 01:41:21] Sync cycle completed successfully
+[2026-05-14 01:41:21] Waiting 10000 ms...
+[2026-05-14 01:41:31] Sync cycle started at SystemTime { tv_sec: 1778715691, tv_nsec: 869885932 }
+[2026-05-14 01:41:31]    Local: "./local_data"
+[2026-05-14 01:41:31]    Remote: "./remote_data"
+[2026-05-14 01:41:31]    Mode: pull
+[2026-05-14 01:41:31]    Regex: .*\.txt$
+[2026-05-14 01:41:31]    Scanning source: "./remote_data"
+[2026-05-14 01:41:31] Sync cycle completed successfully
+[2026-05-14 01:41:31] Waiting 10000 ms...
+[2026-05-14 01:41:55] App started
+[2026-05-14 01:41:55] Sync mode: pull
+[2026-05-14 01:41:55] Watchdog starting with PID-file lock
+[2026-05-14 01:41:55] Single instance check passed (PID: 14404)
+[2026-05-14 01:41:55] Sync cycle started at SystemTime { tv_sec: 1778715715, tv_nsec: 521810569 }
+[2026-05-14 01:41:55]    Local: "./local_data"
+[2026-05-14 01:41:55]    Remote: "./remote_data"
+[2026-05-14 01:41:55]    Mode: pull
+[2026-05-14 01:41:55]    Regex: .*\.txt$
+[2026-05-14 01:41:55]    Scanning source: "./remote_data"
+[2026-05-14 01:41:55] Sync cycle completed successfully
+[2026-05-14 01:41:55] Waiting 10000 ms...
+[2026-05-14 01:42:05] Sync cycle started at SystemTime { tv_sec: 1778715725, tv_nsec: 523631908 }
+[2026-05-14 01:42:05]    Local: "./local_data"
+[2026-05-14 01:42:05]    Remote: "./remote_data"
+[2026-05-14 01:42:05]    Mode: pull
+[2026-05-14 01:42:05]    Regex: .*\.txt$
+[2026-05-14 01:42:05]    Scanning source: "./remote_data"
+[2026-05-14 01:42:05] Sync cycle completed successfully
+[2026-05-14 01:42:05] Waiting 10000 ms...
+[2026-05-14 01:44:07] App started
+[2026-05-14 01:44:07] Sync mode: pull
+[2026-05-14 01:44:07] Watchdog starting with PID-file lock
+[2026-05-14 01:44:07] Single instance check passed (PID: 14793)
+[2026-05-14 01:44:07] Sync cycle started at SystemTime { tv_sec: 1778715847, tv_nsec: 823029486 }
+[2026-05-14 01:44:07]    Local: "./local_data"
+[2026-05-14 01:44:07]    Remote: "./remote_data"
+[2026-05-14 01:44:07]    Mode: pull
+[2026-05-14 01:44:07]    Regex: .*\.txt$
+[2026-05-14 01:44:07]    Scanning source: "./remote_data"
+[2026-05-14 01:44:07] Sync cycle completed successfully
+[2026-05-14 01:44:07] Waiting 10000 ms...
+[2026-05-14 01:44:17] Sync cycle started at SystemTime { tv_sec: 1778715857, tv_nsec: 824359287 }
+[2026-05-14 01:44:17]    Local: "./local_data"
+[2026-05-14 01:44:17]    Remote: "./remote_data"
+[2026-05-14 01:44:17]    Mode: pull
+[2026-05-14 01:44:17]    Regex: .*\.txt$
+[2026-05-14 01:44:17]    Scanning source: "./remote_data"
+[2026-05-14 01:44:17] Sync cycle completed successfully
+[2026-05-14 01:44:17] Waiting 10000 ms...
+[2026-05-14 01:49:48] App started
+[2026-05-14 01:49:48] Sync mode: pull
+[2026-05-14 01:49:48] Watchdog starting with PID-file lock
+[2026-05-14 01:49:48] Single instance check passed (PID: 15206)
+[2026-05-14 01:49:48] Sync cycle started at SystemTime { tv_sec: 1778716188, tv_nsec: 623504369 }
+[2026-05-14 01:49:48]    Local: "./local_data"
+[2026-05-14 01:49:48]    Remote: "./remote_data"
+[2026-05-14 01:49:48]    Mode: pull
+[2026-05-14 01:49:48]    Regex: .*\.txt$
+[2026-05-14 01:49:48]    Scanning source: "./remote_data"
+[2026-05-14 01:49:48] Sync cycle completed successfully
+[2026-05-14 01:49:48] Waiting 10000 ms...
+[2026-05-14 01:49:58] Sync cycle started at SystemTime { tv_sec: 1778716198, tv_nsec: 625484228 }
+[2026-05-14 01:49:58]    Local: "./local_data"
+[2026-05-14 01:49:58]    Remote: "./remote_data"
+[2026-05-14 01:49:58]    Mode: pull
+[2026-05-14 01:49:58]    Regex: .*\.txt$
+[2026-05-14 01:49:58]    Scanning source: "./remote_data"
+[2026-05-14 01:49:58] Sync cycle completed successfully
+[2026-05-14 01:49:58] Waiting 10000 ms...
+[2026-05-14 01:51:49] App started
+[2026-05-14 01:51:49] Sync mode: pull
+[2026-05-14 01:51:49] Watchdog starting with PID-file lock
+[2026-05-14 01:51:49] Single instance check passed (PID: 15540)
+[2026-05-14 01:51:49] Sync cycle started at SystemTime { tv_sec: 1778716309, tv_nsec: 68254458 }
+[2026-05-14 01:51:49] Sync cycle completed successfully
+[2026-05-14 01:51:49] Waiting 10000 ms...
+[2026-05-14 01:51:59] Sync cycle started at SystemTime { tv_sec: 1778716319, tv_nsec: 71185060 }
+[2026-05-14 01:51:59] Sync cycle completed successfully
+[2026-05-14 01:51:59] Waiting 10000 ms...
+[2026-05-14 01:52:09] Sync cycle started at SystemTime { tv_sec: 1778716329, tv_nsec: 73130822 }
+[2026-05-14 01:52:09] Sync cycle completed successfully
+[2026-05-14 01:52:09] Waiting 10000 ms...
+[2026-05-14 01:52:19] Sync cycle started at SystemTime { tv_sec: 1778716339, tv_nsec: 74870555 }
+[2026-05-14 01:52:19] Sync cycle completed successfully
+[2026-05-14 01:52:19] Waiting 10000 ms...
+[2026-05-14 01:52:29] Sync cycle started at SystemTime { tv_sec: 1778716349, tv_nsec: 76962959 }
+[2026-05-14 01:52:29] Sync cycle completed successfully
+[2026-05-14 01:52:29] Waiting 10000 ms...
+[2026-05-14 02:03:32] App started
+[2026-05-14 02:03:32] Sync mode: pull
+[2026-05-14 02:03:32] Watchdog starting with PID-file lock
+[2026-05-14 02:03:32] Single instance check passed (PID: 4179)
+[2026-05-14 02:03:32] Sync cycle started at SystemTime { tv_sec: 1778717012, tv_nsec: 988178927 }
+[2026-05-14 02:03:32] Sync cycle completed successfully
+[2026-05-14 02:03:32] Waiting 10000 ms...
+[2026-05-14 02:03:42] Sync cycle started at SystemTime { tv_sec: 1778717022, tv_nsec: 995741531 }
+[2026-05-14 02:03:42] Sync cycle completed successfully
+[2026-05-14 02:03:42] Waiting 10000 ms...
+[2026-05-15 23:55:02] App started
+[2026-05-15 23:55:02] Sync mode: pull
+[2026-05-15 23:55:02] Watchdog starting with PID-file lock
+[2026-05-15 23:55:02] Single instance check passed (PID: 4574)
+[2026-05-15 23:55:02] Sync cycle started at SystemTime { tv_sec: 1778882102, tv_nsec: 220161437 }
+[2026-05-15 23:55:02]    Local: "./local_data"
+[2026-05-15 23:55:02]    Remote: "./remote_data"
+[2026-05-15 23:55:02]    Mode: pull
+[2026-05-15 23:55:02]    Regex: .*\.txt$
+[2026-05-15 23:55:02]    Scanning source: "./remote_data"
+[2026-05-15 23:55:02]    Found file: "./remote_data/note.txt"
+[2026-05-15 23:55:02]    Found file: "./remote_data/file1.txt"
+[2026-05-15 23:55:02]    Found file: "./local_data/note.txt"
+[2026-05-15 23:55:02]    Found file: "./local_data/file1.txt"
+[2026-05-15 23:55:02] Sync cycle completed successfully
+[2026-05-15 23:55:02] Waiting 10000 ms...
+[2026-05-15 23:55:12] Sync cycle started at SystemTime { tv_sec: 1778882112, tv_nsec: 222155507 }
+[2026-05-15 23:55:12]    Local: "./local_data"
+[2026-05-15 23:55:12]    Remote: "./remote_data"
+[2026-05-15 23:55:12]    Mode: pull
+[2026-05-15 23:55:12]    Regex: .*\.txt$
+[2026-05-15 23:55:12]    Scanning source: "./remote_data"
+[2026-05-15 23:55:12]    Found file: "./remote_data/note.txt"
+[2026-05-15 23:55:12]    Found file: "./remote_data/file1.txt"
+[2026-05-15 23:55:12]    Found file: "./local_data/note.txt"
+[2026-05-15 23:55:12]    Found file: "./local_data/file1.txt"
+[2026-05-15 23:55:12] Sync cycle completed successfully
+[2026-05-15 23:55:12] Waiting 10000 ms...
+[2026-05-15 23:55:22] Sync cycle started at SystemTime { tv_sec: 1778882122, tv_nsec: 224173475 }
+[2026-05-15 23:55:22]    Local: "./local_data"
+[2026-05-15 23:55:22]    Remote: "./remote_data"
+[2026-05-15 23:55:22]    Mode: pull
+[2026-05-15 23:55:22]    Regex: .*\.txt$
+[2026-05-15 23:55:22]    Scanning source: "./remote_data"
+[2026-05-15 23:55:22]    Found file: "./remote_data/note.txt"
+[2026-05-15 23:55:22]    Found file: "./remote_data/file1.txt"
+[2026-05-15 23:55:22]    Found file: "./local_data/note.txt"
+[2026-05-15 23:55:22]    Found file: "./local_data/file1.txt"
+[2026-05-15 23:55:22] Sync cycle completed successfully
+[2026-05-15 23:55:22] Waiting 10000 ms...
+[2026-05-15 23:55:32] Sync cycle started at SystemTime { tv_sec: 1778882132, tv_nsec: 226059162 }
+[2026-05-15 23:55:32]    Local: "./local_data"
+[2026-05-15 23:55:32]    Remote: "./remote_data"
+[2026-05-15 23:55:32]    Mode: pull
+[2026-05-15 23:55:32]    Regex: .*\.txt$
+[2026-05-15 23:55:32]    Scanning source: "./remote_data"
+[2026-05-15 23:55:32]    Found file: "./remote_data/note.txt"
+[2026-05-15 23:55:32]    Found file: "./remote_data/file1.txt"
+[2026-05-15 23:55:32]    Found file: "./local_data/note.txt"
+[2026-05-15 23:55:32]    Found file: "./local_data/file1.txt"
+[2026-05-15 23:55:32] Sync cycle completed successfully
+[2026-05-15 23:55:32] Waiting 10000 ms...
+[2026-05-15 23:55:42] Sync cycle started at SystemTime { tv_sec: 1778882142, tv_nsec: 227661971 }
+[2026-05-15 23:55:42]    Local: "./local_data"
+[2026-05-15 23:55:42]    Remote: "./remote_data"
+[2026-05-15 23:55:42]    Mode: pull
+[2026-05-15 23:55:42]    Regex: .*\.txt$
+[2026-05-15 23:55:42]    Scanning source: "./remote_data"
+[2026-05-15 23:55:42]    Found file: "./remote_data/note.txt"
+[2026-05-15 23:55:42]    Found file: "./remote_data/file1.txt"
+[2026-05-15 23:55:42]    Found file: "./local_data/note.txt"
+[2026-05-15 23:55:42]    Found file: "./local_data/file1.txt"
+[2026-05-15 23:55:42] Sync cycle completed successfully
+[2026-05-15 23:55:42] Waiting 10000 ms...
+[2026-05-15 23:55:52] Sync cycle started at SystemTime { tv_sec: 1778882152, tv_nsec: 229841597 }
+[2026-05-15 23:55:52]    Local: "./local_data"
+[2026-05-15 23:55:52]    Remote: "./remote_data"
+[2026-05-15 23:55:52]    Mode: pull
+[2026-05-15 23:55:52]    Regex: .*\.txt$
+[2026-05-15 23:55:52]    Scanning source: "./remote_data"
+[2026-05-15 23:55:52]    Found file: "./remote_data/note.txt"
+[2026-05-15 23:55:52]    Found file: "./remote_data/file1.txt"
+[2026-05-15 23:55:52]    Found file: "./local_data/note.txt"
+[2026-05-15 23:55:52]    Found file: "./local_data/file1.txt"
+[2026-05-15 23:55:52] Sync cycle completed successfully
+[2026-05-15 23:55:52] Waiting 10000 ms...
+[2026-05-15 23:56:02] Sync cycle started at SystemTime { tv_sec: 1778882162, tv_nsec: 231372818 }
+[2026-05-15 23:56:02]    Local: "./local_data"
+[2026-05-15 23:56:02]    Remote: "./remote_data"
+[2026-05-15 23:56:02]    Mode: pull
+[2026-05-15 23:56:02]    Regex: .*\.txt$
+[2026-05-15 23:56:02]    Scanning source: "./remote_data"
+[2026-05-15 23:56:02]    Found file: "./remote_data/note.txt"
+[2026-05-15 23:56:02]    Found file: "./remote_data/file1.txt"
+[2026-05-15 23:56:02]    Found file: "./local_data/note.txt"
+[2026-05-15 23:56:02]    Found file: "./local_data/file1.txt"
+[2026-05-15 23:56:02] Sync cycle completed successfully
+[2026-05-15 23:56:02] Waiting 10000 ms...
