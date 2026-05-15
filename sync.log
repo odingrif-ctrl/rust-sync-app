@@ -300,3 +300,446 @@ Test
 [2026-05-15 23:56:02]    Found file: "./local_data/file1.txt"
 [2026-05-15 23:56:02] Sync cycle completed successfully
 [2026-05-15 23:56:02] Waiting 10000 ms...
+[2026-05-15 23:59:53] App started
+[2026-05-15 23:59:53] Sync mode: push
+[2026-05-15 23:59:53] Watchdog starting with PID-file lock
+[2026-05-15 23:59:53] Single instance check passed (PID: 4880)
+[2026-05-15 23:59:53] Sync cycle started at SystemTime { tv_sec: 1778882393, tv_nsec: 171458632 }
+[2026-05-15 23:59:53]    Local: "./local_data"
+[2026-05-15 23:59:53]    Remote: "./remote_data"
+[2026-05-15 23:59:53]    Mode: push
+[2026-05-15 23:59:53]    Regex: .*\.txt$
+[2026-05-15 23:59:53]    Scanning source: "./local_data"
+[2026-05-15 23:59:53]    Found file: "./local_data/note.txt"
+[2026-05-15 23:59:53]    Found file: "./local_data/push_test.txt"
+[2026-05-15 23:59:53]    Found file: "./local_data/file1.txt"
+[2026-05-15 23:59:53]    Found file: "./remote_data/note.txt"
+[2026-05-15 23:59:53]    Found file: "./remote_data/file1.txt"
+[2026-05-15 23:59:53]    Copying: "note.txt" -> "note.txt"
+[2026-05-15 23:59:53]    Atomic copy: "note.txt" -> "note.txt"
+[2026-05-15 23:59:53]    Copying: "push_test.txt" -> "push_test.txt"
+[2026-05-15 23:59:53]    Atomic copy: "push_test.txt" -> "push_test.txt"
+[2026-05-15 23:59:53]    Copying: "file1.txt" -> "file1.txt"
+[2026-05-15 23:59:53]    Atomic copy: "file1.txt" -> "file1.txt"
+[2026-05-15 23:59:53] Sync cycle completed successfully
+[2026-05-15 23:59:53] Waiting 10000 ms...
+[2026-05-16 00:00:03] Sync cycle started at SystemTime { tv_sec: 1778882403, tv_nsec: 175103491 }
+[2026-05-16 00:00:03]    Local: "./local_data"
+[2026-05-16 00:00:03]    Remote: "./remote_data"
+[2026-05-16 00:00:03]    Mode: push
+[2026-05-16 00:00:03]    Regex: .*\.txt$
+[2026-05-16 00:00:03]    Scanning source: "./local_data"
+[2026-05-16 00:00:03]    Found file: "./local_data/note.txt"
+[2026-05-16 00:00:03]    Found file: "./local_data/push_test.txt"
+[2026-05-16 00:00:03]    Found file: "./local_data/file1.txt"
+[2026-05-16 00:00:03]    Found file: "./remote_data/note.txt"
+[2026-05-16 00:00:03]    Found file: "./remote_data/push_test.txt"
+[2026-05-16 00:00:03]    Found file: "./remote_data/file1.txt"
+[2026-05-16 00:00:03] Sync cycle completed successfully
+[2026-05-16 00:00:03] Waiting 10000 ms...
+[2026-05-16 00:00:13] Sync cycle started at SystemTime { tv_sec: 1778882413, tv_nsec: 177043882 }
+[2026-05-16 00:00:13]    Local: "./local_data"
+[2026-05-16 00:00:13]    Remote: "./remote_data"
+[2026-05-16 00:00:13]    Mode: push
+[2026-05-16 00:00:13]    Regex: .*\.txt$
+[2026-05-16 00:00:13]    Scanning source: "./local_data"
+[2026-05-16 00:00:13]    Found file: "./local_data/note.txt"
+[2026-05-16 00:00:13]    Found file: "./local_data/push_test.txt"
+[2026-05-16 00:00:13]    Found file: "./local_data/file1.txt"
+[2026-05-16 00:00:13]    Found file: "./remote_data/note.txt"
+[2026-05-16 00:00:13]    Found file: "./remote_data/push_test.txt"
+[2026-05-16 00:00:13]    Found file: "./remote_data/file1.txt"
+[2026-05-16 00:00:13] Sync cycle completed successfully
+[2026-05-16 00:00:13] Waiting 10000 ms...
+[2026-05-16 00:52:06] App started
+[2026-05-16 00:52:06] Sync mode: push
+[2026-05-16 00:52:06] Watchdog starting with PID-file lock
+[2026-05-16 00:52:06] Single instance check passed (PID: 13834)
+[2026-05-16 00:52:06] Sync cycle started at SystemTime { tv_sec: 1778885526, tv_nsec: 965185260 }
+[2026-05-16 00:52:06]    Local: "./local_data"
+[2026-05-16 00:52:06]    Remote: "./remote_data"
+[2026-05-16 00:52:06]    Mode: push
+[2026-05-16 00:52:06]    Regex: .*\.txt$
+[2026-05-16 00:52:06]    Local sync mode (placeholder)
+[2026-05-16 00:52:06] Sync cycle completed successfully
+[2026-05-16 00:52:06] Waiting 10000 ms...
+[2026-05-16 00:52:16] Sync cycle started at SystemTime { tv_sec: 1778885536, tv_nsec: 966697662 }
+[2026-05-16 00:52:16]    Local: "./local_data"
+[2026-05-16 00:52:16]    Remote: "./remote_data"
+[2026-05-16 00:52:16]    Mode: push
+[2026-05-16 00:52:16]    Regex: .*\.txt$
+[2026-05-16 00:52:16]    Local sync mode (placeholder)
+[2026-05-16 00:52:16] Sync cycle completed successfully
+[2026-05-16 00:52:16] Waiting 10000 ms...
+[2026-05-16 00:52:26] Sync cycle started at SystemTime { tv_sec: 1778885546, tv_nsec: 968895650 }
+[2026-05-16 00:52:26]    Local: "./local_data"
+[2026-05-16 00:52:26]    Remote: "./remote_data"
+[2026-05-16 00:52:26]    Mode: push
+[2026-05-16 00:52:26]    Regex: .*\.txt$
+[2026-05-16 00:52:26]    Local sync mode (placeholder)
+[2026-05-16 00:52:26] Sync cycle completed successfully
+[2026-05-16 00:52:26] Waiting 10000 ms...
+[2026-05-16 00:52:36] Sync cycle started at SystemTime { tv_sec: 1778885556, tv_nsec: 970152220 }
+[2026-05-16 00:52:36]    Local: "./local_data"
+[2026-05-16 00:52:36]    Remote: "./remote_data"
+[2026-05-16 00:52:36]    Mode: push
+[2026-05-16 00:52:36]    Regex: .*\.txt$
+[2026-05-16 00:52:36]    Local sync mode (placeholder)
+[2026-05-16 00:52:36] Sync cycle completed successfully
+[2026-05-16 00:52:36] Waiting 10000 ms...
+[2026-05-16 00:53:18] App started
+[2026-05-16 00:53:18] Sync mode: push
+[2026-05-16 00:53:18] Watchdog starting with PID-file lock
+[2026-05-16 00:53:18] Single instance check passed (PID: 13931)
+[2026-05-16 00:53:18] Sync cycle started at SystemTime { tv_sec: 1778885598, tv_nsec: 307134053 }
+[2026-05-16 00:53:18]    Local: "./local_data"
+[2026-05-16 00:53:18]    Remote: "./remote_data"
+[2026-05-16 00:53:18]    Mode: push
+[2026-05-16 00:53:18]    Regex: .*\.txt$
+[2026-05-16 00:53:18]    Local sync mode (placeholder)
+[2026-05-16 00:53:18] Sync cycle completed successfully
+[2026-05-16 00:53:18] Waiting 10000 ms...
+[2026-05-16 00:53:28] Sync cycle started at SystemTime { tv_sec: 1778885608, tv_nsec: 309275165 }
+[2026-05-16 00:53:28]    Local: "./local_data"
+[2026-05-16 00:53:28]    Remote: "./remote_data"
+[2026-05-16 00:53:28]    Mode: push
+[2026-05-16 00:53:28]    Regex: .*\.txt$
+[2026-05-16 00:53:28]    Local sync mode (placeholder)
+[2026-05-16 00:53:28] Sync cycle completed successfully
+[2026-05-16 00:53:28] Waiting 10000 ms...
+[2026-05-16 00:53:38] Sync cycle started at SystemTime { tv_sec: 1778885618, tv_nsec: 310904381 }
+[2026-05-16 00:53:38]    Local: "./local_data"
+[2026-05-16 00:53:38]    Remote: "./remote_data"
+[2026-05-16 00:53:38]    Mode: push
+[2026-05-16 00:53:38]    Regex: .*\.txt$
+[2026-05-16 00:53:38]    Local sync mode (placeholder)
+[2026-05-16 00:53:38] Sync cycle completed successfully
+[2026-05-16 00:53:38] Waiting 10000 ms...
+[2026-05-16 00:53:48] Sync cycle started at SystemTime { tv_sec: 1778885628, tv_nsec: 312520534 }
+[2026-05-16 00:53:48]    Local: "./local_data"
+[2026-05-16 00:53:48]    Remote: "./remote_data"
+[2026-05-16 00:53:48]    Mode: push
+[2026-05-16 00:53:48]    Regex: .*\.txt$
+[2026-05-16 00:53:48]    Local sync mode (placeholder)
+[2026-05-16 00:53:48] Sync cycle completed successfully
+[2026-05-16 00:53:48] Waiting 10000 ms...
+[2026-05-16 00:53:58] Sync cycle started at SystemTime { tv_sec: 1778885638, tv_nsec: 314189898 }
+[2026-05-16 00:53:58]    Local: "./local_data"
+[2026-05-16 00:53:58]    Remote: "./remote_data"
+[2026-05-16 00:53:58]    Mode: push
+[2026-05-16 00:53:58]    Regex: .*\.txt$
+[2026-05-16 00:53:58]    Local sync mode (placeholder)
+[2026-05-16 00:53:58] Sync cycle completed successfully
+[2026-05-16 00:53:58] Waiting 10000 ms...
+[2026-05-16 00:54:08] Sync cycle started at SystemTime { tv_sec: 1778885648, tv_nsec: 315552636 }
+[2026-05-16 00:54:08]    Local: "./local_data"
+[2026-05-16 00:54:08]    Remote: "./remote_data"
+[2026-05-16 00:54:08]    Mode: push
+[2026-05-16 00:54:08]    Regex: .*\.txt$
+[2026-05-16 00:54:08]    Local sync mode (placeholder)
+[2026-05-16 00:54:08] Sync cycle completed successfully
+[2026-05-16 00:54:08] Waiting 10000 ms...
+[2026-05-16 00:54:18] Sync cycle started at SystemTime { tv_sec: 1778885658, tv_nsec: 317217500 }
+[2026-05-16 00:54:18]    Local: "./local_data"
+[2026-05-16 00:54:18]    Remote: "./remote_data"
+[2026-05-16 00:54:18]    Mode: push
+[2026-05-16 00:54:18]    Regex: .*\.txt$
+[2026-05-16 00:54:18]    Local sync mode (placeholder)
+[2026-05-16 00:54:18] Sync cycle completed successfully
+[2026-05-16 00:54:18] Waiting 10000 ms...
+[2026-05-16 00:54:28] Sync cycle started at SystemTime { tv_sec: 1778885668, tv_nsec: 318942051 }
+[2026-05-16 00:54:28]    Local: "./local_data"
+[2026-05-16 00:54:28]    Remote: "./remote_data"
+[2026-05-16 00:54:28]    Mode: push
+[2026-05-16 00:54:28]    Regex: .*\.txt$
+[2026-05-16 00:54:28]    Local sync mode (placeholder)
+[2026-05-16 00:54:28] Sync cycle completed successfully
+[2026-05-16 00:54:28] Waiting 10000 ms...
+[2026-05-16 00:54:38] Sync cycle started at SystemTime { tv_sec: 1778885678, tv_nsec: 320760883 }
+[2026-05-16 00:54:38]    Local: "./local_data"
+[2026-05-16 00:54:38]    Remote: "./remote_data"
+[2026-05-16 00:54:38]    Mode: push
+[2026-05-16 00:54:38]    Regex: .*\.txt$
+[2026-05-16 00:54:38]    Local sync mode (placeholder)
+[2026-05-16 00:54:38] Sync cycle completed successfully
+[2026-05-16 00:54:38] Waiting 10000 ms...
+[2026-05-16 00:54:48] Sync cycle started at SystemTime { tv_sec: 1778885688, tv_nsec: 322303349 }
+[2026-05-16 00:54:48]    Local: "./local_data"
+[2026-05-16 00:54:48]    Remote: "./remote_data"
+[2026-05-16 00:54:48]    Mode: push
+[2026-05-16 00:54:48]    Regex: .*\.txt$
+[2026-05-16 00:54:48]    Local sync mode (placeholder)
+[2026-05-16 00:54:48] Sync cycle completed successfully
+[2026-05-16 00:54:48] Waiting 10000 ms...
+[2026-05-16 00:54:58] Sync cycle started at SystemTime { tv_sec: 1778885698, tv_nsec: 324125709 }
+[2026-05-16 00:54:58]    Local: "./local_data"
+[2026-05-16 00:54:58]    Remote: "./remote_data"
+[2026-05-16 00:54:58]    Mode: push
+[2026-05-16 00:54:58]    Regex: .*\.txt$
+[2026-05-16 00:54:58]    Local sync mode (placeholder)
+[2026-05-16 00:54:58] Sync cycle completed successfully
+[2026-05-16 00:54:58] Waiting 10000 ms...
+[2026-05-16 00:55:08] Sync cycle started at SystemTime { tv_sec: 1778885708, tv_nsec: 325324796 }
+[2026-05-16 00:55:08]    Local: "./local_data"
+[2026-05-16 00:55:08]    Remote: "./remote_data"
+[2026-05-16 00:55:08]    Mode: push
+[2026-05-16 00:55:08]    Regex: .*\.txt$
+[2026-05-16 00:55:08]    Local sync mode (placeholder)
+[2026-05-16 00:55:08] Sync cycle completed successfully
+[2026-05-16 00:55:08] Waiting 10000 ms...
+[2026-05-16 00:55:18] Sync cycle started at SystemTime { tv_sec: 1778885718, tv_nsec: 326837669 }
+[2026-05-16 00:55:18]    Local: "./local_data"
+[2026-05-16 00:55:18]    Remote: "./remote_data"
+[2026-05-16 00:55:18]    Mode: push
+[2026-05-16 00:55:18]    Regex: .*\.txt$
+[2026-05-16 00:55:18]    Local sync mode (placeholder)
+[2026-05-16 00:55:18] Sync cycle completed successfully
+[2026-05-16 00:55:18] Waiting 10000 ms...
+[2026-05-16 00:55:28] Sync cycle started at SystemTime { tv_sec: 1778885728, tv_nsec: 328347870 }
+[2026-05-16 00:55:28]    Local: "./local_data"
+[2026-05-16 00:55:28]    Remote: "./remote_data"
+[2026-05-16 00:55:28]    Mode: push
+[2026-05-16 00:55:28]    Regex: .*\.txt$
+[2026-05-16 00:55:28]    Local sync mode (placeholder)
+[2026-05-16 00:55:28] Sync cycle completed successfully
+[2026-05-16 00:55:28] Waiting 10000 ms...
+[2026-05-16 00:55:38] Sync cycle started at SystemTime { tv_sec: 1778885738, tv_nsec: 330419764 }
+[2026-05-16 00:55:38]    Local: "./local_data"
+[2026-05-16 00:55:38]    Remote: "./remote_data"
+[2026-05-16 00:55:38]    Mode: push
+[2026-05-16 00:55:38]    Regex: .*\.txt$
+[2026-05-16 00:55:38]    Local sync mode (placeholder)
+[2026-05-16 00:55:38] Sync cycle completed successfully
+[2026-05-16 00:55:38] Waiting 10000 ms...
+[2026-05-16 00:57:18] App started
+[2026-05-16 00:57:18] Sync mode: pull
+[2026-05-16 00:57:18] Watchdog starting with PID-file lock
+[2026-05-16 00:57:18] Single instance check passed (PID: 14133)
+[2026-05-16 00:57:18] Sync cycle started at SystemTime { tv_sec: 1778885838, tv_nsec: 58343839 }
+[2026-05-16 00:57:18]    Local: "./local_data"
+[2026-05-16 00:57:18]    Remote: "s3://dev-sync-bucket-odingrif-462292558512-eu-north-1-an/test-folder"
+[2026-05-16 00:57:18]    Mode: pull
+[2026-05-16 00:57:18]    Regex: .*
+[2026-05-16 00:57:18]    S3 bucket: dev-sync-bucket-odingrif-462292558512-eu-north-1-an, prefix: test-folder
+[2026-05-16 00:57:18]    S3 found: test-folder/test-s3.txt
+[2026-05-16 00:57:18]    Local found: "./local_data/note.txt"
+[2026-05-16 00:57:18]    Local found: "./local_data/push_test.txt"
+[2026-05-16 00:57:18]    Local found: "./local_data/file1.txt"
+[2026-05-16 00:57:18]    Downloading: test-folder/test-s3.txt -> "test-s3.txt"
+[2026-05-16 00:57:18]    Downloaded: test-folder/test-s3.txt -> "./local_data/test-s3.txt"
+[2026-05-16 00:57:18]    Deleting local orphan: "note.txt"
+[2026-05-16 00:57:18]    Deleting local orphan: "push_test.txt"
+[2026-05-16 00:57:18]    Deleting local orphan: "file1.txt"
+[2026-05-16 00:57:18] Sync cycle completed successfully
+[2026-05-16 00:57:18] Waiting 30000 ms...
+[2026-05-16 00:57:48] Sync cycle started at SystemTime { tv_sec: 1778885868, tv_nsec: 375746994 }
+[2026-05-16 00:57:48]    Local: "./local_data"
+[2026-05-16 00:57:48]    Remote: "s3://dev-sync-bucket-odingrif-462292558512-eu-north-1-an/test-folder"
+[2026-05-16 00:57:48]    Mode: pull
+[2026-05-16 00:57:48]    Regex: .*
+[2026-05-16 00:57:48]    S3 bucket: dev-sync-bucket-odingrif-462292558512-eu-north-1-an, prefix: test-folder
+[2026-05-16 00:57:48]    S3 found: test-folder/test-s3.txt
+[2026-05-16 00:57:48]    Local found: "./local_data/test-s3.txt"
+[2026-05-16 00:57:48] Sync cycle completed successfully
+[2026-05-16 00:57:48] Waiting 30000 ms...
+[2026-05-16 00:58:18] Sync cycle started at SystemTime { tv_sec: 1778885898, tv_nsec: 589460439 }
+[2026-05-16 00:58:18]    Local: "./local_data"
+[2026-05-16 00:58:18]    Remote: "s3://dev-sync-bucket-odingrif-462292558512-eu-north-1-an/test-folder"
+[2026-05-16 00:58:18]    Mode: pull
+[2026-05-16 00:58:18]    Regex: .*
+[2026-05-16 00:58:18]    S3 bucket: dev-sync-bucket-odingrif-462292558512-eu-north-1-an, prefix: test-folder
+[2026-05-16 00:58:18]    S3 found: test-folder/test-s3.txt
+[2026-05-16 00:58:18]    Local found: "./local_data/test-s3.txt"
+[2026-05-16 00:58:18] Sync cycle completed successfully
+[2026-05-16 00:58:18] Waiting 30000 ms...
+[2026-05-16 00:58:48] Sync cycle started at SystemTime { tv_sec: 1778885928, tv_nsec: 814801353 }
+[2026-05-16 00:58:48]    Local: "./local_data"
+[2026-05-16 00:58:48]    Remote: "s3://dev-sync-bucket-odingrif-462292558512-eu-north-1-an/test-folder"
+[2026-05-16 00:58:48]    Mode: pull
+[2026-05-16 00:58:48]    Regex: .*
+[2026-05-16 00:58:48]    S3 bucket: dev-sync-bucket-odingrif-462292558512-eu-north-1-an, prefix: test-folder
+[2026-05-16 00:58:49]    S3 found: test-folder/test-s3.txt
+[2026-05-16 00:58:49]    Local found: "./local_data/test-s3.txt"
+[2026-05-16 00:58:49] Sync cycle completed successfully
+[2026-05-16 00:58:49] Waiting 30000 ms...
+[2026-05-16 00:59:45] App started
+[2026-05-16 00:59:45] Sync mode: pull
+[2026-05-16 00:59:45] Watchdog starting with PID-file lock
+[2026-05-16 00:59:45] Single instance check passed (PID: 14259)
+[2026-05-16 00:59:45] Sync cycle started at SystemTime { tv_sec: 1778885985, tv_nsec: 761246404 }
+[2026-05-16 00:59:45]    Local: "./local_data"
+[2026-05-16 00:59:45]    Remote: "s3://dev-sync-bucket-odingrif-462292558512-eu-north-1-an/test-folder"
+[2026-05-16 00:59:45]    Mode: pull
+[2026-05-16 00:59:45]    Regex: .*
+[2026-05-16 00:59:45]    S3 bucket: dev-sync-bucket-odingrif-462292558512-eu-north-1-an, prefix: test-folder
+[2026-05-16 00:59:46]    S3 found: test-folder/test-s3.txt
+[2026-05-16 00:59:46]    Local found: "./local_data/test-s3.txt"
+[2026-05-16 00:59:46] Sync cycle completed successfully
+[2026-05-16 00:59:46] Waiting 30000 ms...
+[2026-05-16 01:00:16] Sync cycle started at SystemTime { tv_sec: 1778886016, tv_nsec: 30900545 }
+[2026-05-16 01:00:16]    Local: "./local_data"
+[2026-05-16 01:00:16]    Remote: "s3://dev-sync-bucket-odingrif-462292558512-eu-north-1-an/test-folder"
+[2026-05-16 01:00:16]    Mode: pull
+[2026-05-16 01:00:16]    Regex: .*
+[2026-05-16 01:00:16]    S3 bucket: dev-sync-bucket-odingrif-462292558512-eu-north-1-an, prefix: test-folder
+[2026-05-16 01:00:16]    S3 found: test-folder/test-s3.txt
+[2026-05-16 01:00:16]    Local found: "./local_data/test-s3.txt"
+[2026-05-16 01:00:16] Sync cycle completed successfully
+[2026-05-16 01:00:16] Waiting 30000 ms...
+[2026-05-16 01:00:46] Sync cycle started at SystemTime { tv_sec: 1778886046, tv_nsec: 233272815 }
+[2026-05-16 01:00:46]    Local: "./local_data"
+[2026-05-16 01:00:46]    Remote: "s3://dev-sync-bucket-odingrif-462292558512-eu-north-1-an/test-folder"
+[2026-05-16 01:00:46]    Mode: pull
+[2026-05-16 01:00:46]    Regex: .*
+[2026-05-16 01:00:46]    S3 bucket: dev-sync-bucket-odingrif-462292558512-eu-north-1-an, prefix: test-folder
+[2026-05-16 01:00:46]    S3 found: test-folder/test-s3.txt
+[2026-05-16 01:00:46]    Local found: "./local_data/test-s3.txt"
+[2026-05-16 01:00:46] Sync cycle completed successfully
+[2026-05-16 01:00:46] Waiting 30000 ms...
+[2026-05-16 01:04:10] App started
+[2026-05-16 01:04:10] Sync mode: pull
+[2026-05-16 01:04:10] Watchdog starting with PID-file lock
+[2026-05-16 01:04:10] Single instance check passed (PID: 14721)
+[2026-05-16 01:04:10] Sync cycle started at SystemTime { tv_sec: 1778886250, tv_nsec: 704008987 }
+[2026-05-16 01:04:10]    Local: "./local_data"
+[2026-05-16 01:04:10]    Remote: "s3://dev-sync-bucket-odingrif-462292558512-eu-north-1-an/test-folder"
+[2026-05-16 01:04:10]    Mode: pull
+[2026-05-16 01:04:10]    Regex: .*
+[2026-05-16 01:04:10]    S3 bucket: dev-sync-bucket-odingrif-462292558512-eu-north-1-an, prefix: test-folder
+[2026-05-16 01:04:10]    Local found: "./local_data/push-test.txt"
+[2026-05-16 01:04:10]    Local found: "./local_data/test-s3.txt"
+[2026-05-16 01:04:10]    Deleting local orphan: "test-s3.txt"
+[2026-05-16 01:04:10]    Deleting local orphan: "push-test.txt"
+[2026-05-16 01:04:10] Sync cycle completed successfully
+[2026-05-16 01:04:10] Waiting 30000 ms...
+[2026-05-16 01:04:40] Sync cycle started at SystemTime { tv_sec: 1778886280, tv_nsec: 977000843 }
+[2026-05-16 01:04:40]    Local: "./local_data"
+[2026-05-16 01:04:40]    Remote: "s3://dev-sync-bucket-odingrif-462292558512-eu-north-1-an/test-folder"
+[2026-05-16 01:04:40]    Mode: pull
+[2026-05-16 01:04:40]    Regex: .*
+[2026-05-16 01:04:40]    S3 bucket: dev-sync-bucket-odingrif-462292558512-eu-north-1-an, prefix: test-folder
+[2026-05-16 01:04:41] Sync cycle completed successfully
+[2026-05-16 01:04:41] Waiting 30000 ms...
+[2026-05-16 01:05:11] Sync cycle started at SystemTime { tv_sec: 1778886311, tv_nsec: 176192315 }
+[2026-05-16 01:05:11]    Local: "./local_data"
+[2026-05-16 01:05:11]    Remote: "s3://dev-sync-bucket-odingrif-462292558512-eu-north-1-an/test-folder"
+[2026-05-16 01:05:11]    Mode: pull
+[2026-05-16 01:05:11]    Regex: .*
+[2026-05-16 01:05:11]    S3 bucket: dev-sync-bucket-odingrif-462292558512-eu-north-1-an, prefix: test-folder
+[2026-05-16 01:05:11] Sync cycle completed successfully
+[2026-05-16 01:05:11] Waiting 30000 ms...
+[2026-05-16 01:05:41] Sync cycle started at SystemTime { tv_sec: 1778886341, tv_nsec: 371758055 }
+[2026-05-16 01:05:41]    Local: "./local_data"
+[2026-05-16 01:05:41]    Remote: "s3://dev-sync-bucket-odingrif-462292558512-eu-north-1-an/test-folder"
+[2026-05-16 01:05:41]    Mode: pull
+[2026-05-16 01:05:41]    Regex: .*
+[2026-05-16 01:05:41]    S3 bucket: dev-sync-bucket-odingrif-462292558512-eu-north-1-an, prefix: test-folder
+[2026-05-16 01:05:41] Sync cycle completed successfully
+[2026-05-16 01:05:41] Waiting 30000 ms...
+[2026-05-16 01:09:21] App started
+[2026-05-16 01:09:21] Sync mode: pull
+[2026-05-16 01:09:21] Watchdog starting with PID-file lock
+[2026-05-16 01:09:21] Single instance check passed (PID: 15196)
+[2026-05-16 01:09:21] Sync cycle started at SystemTime { tv_sec: 1778886561, tv_nsec: 716159148 }
+[2026-05-16 01:09:21]    Local: "./local_data"
+[2026-05-16 01:09:21]    Remote: "s3://dev-sync-bucket-odingrif-462292558512-eu-north-1-an/test-folder"
+[2026-05-16 01:09:21]    Mode: pull
+[2026-05-16 01:09:21]    Regex: .*
+[2026-05-16 01:09:21]    S3 bucket: dev-sync-bucket-odingrif-462292558512-eu-north-1-an, prefix: test-folder
+[2026-05-16 01:09:21]    S3 found: test-folder/test.txt
+[2026-05-16 01:09:21]    Downloading: test-folder/test.txt -> "test.txt"
+[2026-05-16 01:09:22]    Downloaded: test-folder/test.txt -> "./local_data/test.txt"
+[2026-05-16 01:09:22] Sync cycle completed successfully
+[2026-05-16 01:09:22] Waiting 30000 ms...
+[2026-05-16 01:09:52] Sync cycle started at SystemTime { tv_sec: 1778886592, tv_nsec: 43938666 }
+[2026-05-16 01:09:52]    Local: "./local_data"
+[2026-05-16 01:09:52]    Remote: "s3://dev-sync-bucket-odingrif-462292558512-eu-north-1-an/test-folder"
+[2026-05-16 01:09:52]    Mode: pull
+[2026-05-16 01:09:52]    Regex: .*
+[2026-05-16 01:09:52]    S3 bucket: dev-sync-bucket-odingrif-462292558512-eu-north-1-an, prefix: test-folder
+[2026-05-16 01:09:52]    S3 found: test-folder/test.txt
+[2026-05-16 01:09:52]    Local found: "./local_data/test.txt"
+[2026-05-16 01:09:52] Sync cycle completed successfully
+[2026-05-16 01:09:52] Waiting 30000 ms...
+[2026-05-16 01:10:37] App started
+[2026-05-16 01:10:37] Sync mode: pull
+[2026-05-16 01:10:37] Watchdog starting with PID-file lock
+[2026-05-16 01:10:37] Single instance check passed (PID: 15420)
+[2026-05-16 01:10:37] Sync cycle started at SystemTime { tv_sec: 1778886637, tv_nsec: 232033784 }
+[2026-05-16 01:10:37]    Local: "./local_data"
+[2026-05-16 01:10:37]    Remote: "s3://dev-sync-bucket-odingrif-462292558512-eu-north-1-an/test-folder"
+[2026-05-16 01:10:37]    Mode: pull
+[2026-05-16 01:10:37]    Regex: .*
+[2026-05-16 01:10:37]    S3 bucket: dev-sync-bucket-odingrif-462292558512-eu-north-1-an, prefix: test-folder
+[2026-05-16 01:10:37]    S3 found: test-folder/test.txt
+[2026-05-16 01:10:37]    Local found: "./local_data/test.txt"
+[2026-05-16 01:10:37] Sync cycle completed successfully
+[2026-05-16 01:10:37] Waiting 30000 ms...
+[2026-05-16 01:11:07] Sync cycle started at SystemTime { tv_sec: 1778886667, tv_nsec: 506075940 }
+[2026-05-16 01:11:07]    Local: "./local_data"
+[2026-05-16 01:11:07]    Remote: "s3://dev-sync-bucket-odingrif-462292558512-eu-north-1-an/test-folder"
+[2026-05-16 01:11:07]    Mode: pull
+[2026-05-16 01:11:07]    Regex: .*
+[2026-05-16 01:11:07]    S3 bucket: dev-sync-bucket-odingrif-462292558512-eu-north-1-an, prefix: test-folder
+[2026-05-16 01:11:07]    S3 found: test-folder/test.txt
+[2026-05-16 01:11:07]    Local found: "./local_data/test.txt"
+[2026-05-16 01:11:07] Sync cycle completed successfully
+[2026-05-16 01:11:07] Waiting 30000 ms...
+[2026-05-16 01:11:37] Sync cycle started at SystemTime { tv_sec: 1778886697, tv_nsec: 704003004 }
+[2026-05-16 01:11:37]    Local: "./local_data"
+[2026-05-16 01:11:37]    Remote: "s3://dev-sync-bucket-odingrif-462292558512-eu-north-1-an/test-folder"
+[2026-05-16 01:11:37]    Mode: pull
+[2026-05-16 01:11:37]    Regex: .*
+[2026-05-16 01:11:37]    S3 bucket: dev-sync-bucket-odingrif-462292558512-eu-north-1-an, prefix: test-folder
+[2026-05-16 01:11:37]    S3 found: test-folder/test.txt
+[2026-05-16 01:11:37]    Local found: "./local_data/test.txt"
+[2026-05-16 01:11:37] Sync cycle completed successfully
+[2026-05-16 01:11:37] Waiting 30000 ms...
+[2026-05-16 01:11:56] App started
+[2026-05-16 01:11:56] Sync mode: pull
+[2026-05-16 01:11:56] Watchdog starting with PID-file lock
+[2026-05-16 01:11:56] Single instance check passed (PID: 15523)
+[2026-05-16 01:11:56] Sync cycle started at SystemTime { tv_sec: 1778886716, tv_nsec: 852583491 }
+[2026-05-16 01:11:56]    Local: "./local_data"
+[2026-05-16 01:11:56]    Remote: "s3://dev-sync-bucket-odingrif-462292558512-eu-north-1-an/test-folder"
+[2026-05-16 01:11:56]    Mode: pull
+[2026-05-16 01:11:56]    Regex: .*
+[2026-05-16 01:11:56]    S3 bucket: dev-sync-bucket-odingrif-462292558512-eu-north-1-an, prefix: test-folder
+[2026-05-16 01:11:57]    S3 found: test-folder/test.txt
+[2026-05-16 01:11:57]    Local found: "./local_data/test.txt"
+[2026-05-16 01:11:57] Sync cycle completed successfully
+[2026-05-16 01:11:57] Waiting 30000 ms...
+[2026-05-16 01:12:27] Sync cycle started at SystemTime { tv_sec: 1778886747, tv_nsec: 111866170 }
+[2026-05-16 01:12:27]    Local: "./local_data"
+[2026-05-16 01:12:27]    Remote: "s3://dev-sync-bucket-odingrif-462292558512-eu-north-1-an/test-folder"
+[2026-05-16 01:12:27]    Mode: pull
+[2026-05-16 01:12:27]    Regex: .*
+[2026-05-16 01:12:27]    S3 bucket: dev-sync-bucket-odingrif-462292558512-eu-north-1-an, prefix: test-folder
+[2026-05-16 01:12:27]    S3 found: test-folder/test.txt
+[2026-05-16 01:12:27]    Local found: "./local_data/test.txt"
+[2026-05-16 01:12:27] Sync cycle completed successfully
+[2026-05-16 01:12:27] Waiting 30000 ms...
+[2026-05-16 01:16:02] App started
+[2026-05-16 01:16:02] Sync mode: pull
+[2026-05-16 01:16:02] Watchdog starting with PID-file lock
+[2026-05-16 01:16:02] Single instance check passed (PID: 16078)
+[2026-05-16 01:16:02] Sync cycle started at SystemTime { tv_sec: 1778886962, tv_nsec: 737024850 }
+[2026-05-16 01:16:02]    Local: "./local_data"
+[2026-05-16 01:16:02]    Remote: "s3://dev-sync-bucket-odingrif-462292558512-eu-north-1-an/test-folder"
+[2026-05-16 01:16:02]    Mode: pull
+[2026-05-16 01:16:02]    Regex: .*
+[2026-05-16 01:16:02]    S3 bucket: dev-sync-bucket-odingrif-462292558512-eu-north-1-an, prefix: test-folder
+[2026-05-16 01:16:03]    S3 found: test-folder/test.txt
+[2026-05-16 01:16:03]    Local found: "./local_data/test.txt"
+[2026-05-16 01:16:03] Sync cycle completed successfully
+[2026-05-16 01:16:03] Waiting 30000 ms...
+[2026-05-16 01:16:33] Sync cycle started at SystemTime { tv_sec: 1778886993, tv_nsec: 8200476 }
+[2026-05-16 01:16:33]    Local: "./local_data"
+[2026-05-16 01:16:33]    Remote: "s3://dev-sync-bucket-odingrif-462292558512-eu-north-1-an/test-folder"
+[2026-05-16 01:16:33]    Mode: pull
+[2026-05-16 01:16:33]    Regex: .*
+[2026-05-16 01:16:33]    S3 bucket: dev-sync-bucket-odingrif-462292558512-eu-north-1-an, prefix: test-folder
+[2026-05-16 01:16:33]    S3 found: test-folder/test.txt
+[2026-05-16 01:16:33]    Local found: "./local_data/test.txt"
+[2026-05-16 01:16:33] Sync cycle completed successfully
+[2026-05-16 01:16:33] Waiting 30000 ms...

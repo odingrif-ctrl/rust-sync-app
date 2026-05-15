@@ -1,12 +1,12 @@
-endpoint = ""
-token = ""
-remote_path = "./remote_data"
+endpoint = "https://s3.eu-north-1.amazonaws.com"
+token = "+aSADHsg9EmTdgMGoQo1YJWr/2f7sjHzi2kgu5Lx"
+remote_path = "s3://dev-sync-bucket-odingrif-462292558512-eu-north-1-an/test-folder"
 local_path = "./local_data"
 log_path = "./sync.log"
 max_file_age_ms = 86400000
 delete_old_files = false
 sync_mode = "pull"
-polling_interval_ms = 10000
+polling_interval_ms = 30000
 timeout_ms = 300000
 match_regex = ".*\\.txt$"
 refetch_deleted_file = true
