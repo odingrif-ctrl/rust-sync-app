@@ -1,4 +1,4 @@
-// src/sync.rs — упрощённая S3 синхронизация (без сравнения по дате)
+// src/sync.rs — принудительная перезапись файлов из S3 (без сравнения дат)
 use anyhow::{Context, Result};
 use regex::Regex;
 use std::fs;
@@ -6,16 +6,13 @@ use std::path::{Path, PathBuf};
 use walkdir::WalkDir;
 use crate::logger::Logger;
 
-// S3 dependencies
 use aws_config::BehaviorVersion;
 use aws_sdk_s3::{Client, primitives::ByteStream};
 
-/// Проверка, является ли путь S3
 fn is_s3_path(path: &str) -> bool {
     path.starts_with("s3://")
 }
 
-/// Парсит bucket и prefix из s3://bucket-name/path/to/folder
 fn parse_s3_path(path: &str) -> Result<(String, String)> {
     let without_prefix = path.strip_prefix("s3://")
         .context("Invalid S3 path format")?;
@@ -28,7 +25,6 @@ fn parse_s3_path(path: &str) -> Result<(String, String)> {
     Ok((bucket, prefix))
 }
 
-/// Создаёт S3 клиента (один раз на цикл)
 async fn create_s3_client() -> Result<Client> {
     let config = aws_config::defaults(BehaviorVersion::latest())
         .load()
@@ -36,7 +32,7 @@ async fn create_s3_client() -> Result<Client> {
     Ok(Client::new(&config))
 }
 
-/// Получает список ключей объектов из S3 (без метаданных)
+/// Получает список ключей объектов из S3
 async fn list_s3_keys(client: &Client, bucket: &str, prefix: &str, regex: &Regex, logger: &Logger) -> Result<Vec<String>> {
     let mut keys = Vec::new();
     let mut continuation_token = None;
@@ -67,7 +63,7 @@ async fn list_s3_keys(client: &Client, bucket: &str, prefix: &str, regex: &Regex
     Ok(keys)
 }
 
-/// Скачивает файл из S3 атомарно
+/// Скачивает файл из S3 (всегда перезаписывает)
 async fn download_from_s3(client: &Client, bucket: &str, key: &str, local_path: &Path, logger: &Logger) -> Result<()> {
     let temp_path = local_path.with_extension("tmp");
     let response = client.get_object().bucket(bucket).key(key).send().await?;
@@ -76,19 +72,11 @@ async fn download_from_s3(client: &Client, bucket: &str, key: &str, local_path: 
     let temp_file = fs::File::open(&temp_path)?;
     temp_file.sync_all()?;
     fs::rename(&temp_path, local_path)?;
-    logger.log(&format!("   Downloaded: {} -> {:?}", key, local_path));
+    logger.log(&format!("   Downloaded (overwrite): {} -> {:?}", key, local_path));
     Ok(())
 }
 
-/// Загружает файл в S3 атомарно
-async fn upload_to_s3(client: &Client, bucket: &str, key: &str, local_path: &Path, logger: &Logger) -> Result<()> {
-    let body = ByteStream::from_path(local_path).await?;
-    client.put_object().bucket(bucket).key(key).body(body).send().await?;
-    logger.log(&format!("   Uploaded: {:?} -> {}", local_path, key));
-    Ok(())
-}
-
-/// Сканирует локальную папку (рекурсивно, с учётом regex)
+/// Сканирует локальную папку (только список файлов)
 fn scan_local_keys(dir: &Path, regex: &Regex, logger: &Logger) -> Result<Vec<PathBuf>> {
     let mut files = Vec::new();
     if !dir.exists() {
@@ -110,7 +98,7 @@ fn scan_local_keys(dir: &Path, regex: &Regex, logger: &Logger) -> Result<Vec<Pat
     Ok(files)
 }
 
-/// Синхронизация S3 -> локальная папка (pull) — простая версия
+/// Синхронизация S3 -> локальная папка (всегда перезаписывает)
 async fn sync_s3_to_local(
     client: &Client,
     bucket: &str,
@@ -120,15 +108,7 @@ async fn sync_s3_to_local(
     logger: &Logger,
 ) -> Result<()> {
     let s3_keys = list_s3_keys(client, bucket, prefix, regex, logger).await?;
-    let local_keys = scan_local_keys(local_dir, regex, logger)?;
     
-    // Карта локальных файлов (относительный путь)
-    let local_set: std::collections::HashSet<PathBuf> = local_keys
-        .iter()
-        .filter_map(|p| p.strip_prefix(local_dir).ok().map(|p| p.to_path_buf()))
-        .collect();
-    
-    // Скачиваем файлы из S3
     for key in &s3_keys {
         let rel_path = Path::new(key).strip_prefix(prefix).unwrap_or(Path::new(key));
         let local_path = local_dir.join(rel_path);
@@ -136,22 +116,20 @@ async fn sync_s3_to_local(
             fs::create_dir_all(parent)?;
         }
         
-        // Если файл уже существует локально, пропускаем (для простоты)
-        if !local_path.exists() {
-            logger.log(&format!("   Downloading: {} -> {:?}", key, rel_path));
-            download_from_s3(client, bucket, key, &local_path, logger).await?;
-        }
+        logger.log(&format!("   Downloading: {} -> {:?}", key, rel_path));
+        download_from_s3(client, bucket, key, &local_path, logger).await?;
     }
     
     // Удаляем локальные файлы, которых нет в S3
-    for rel_path in local_set {
+    let local_keys = scan_local_keys(local_dir, regex, logger)?;
+    for local_path in local_keys {
+        let rel_path = local_path.strip_prefix(local_dir).unwrap();
         let s3_key = if prefix.is_empty() {
             rel_path.to_string_lossy().to_string()
         } else {
             format!("{}/{}", prefix, rel_path.display())
         };
         if !s3_keys.contains(&s3_key) {
-            let local_path = local_dir.join(&rel_path);
             logger.log(&format!("   Deleting local orphan: {:?}", rel_path));
             let _ = fs::remove_file(&local_path);
         }
@@ -160,7 +138,7 @@ async fn sync_s3_to_local(
     Ok(())
 }
 
-/// Синхронизация локальная папка -> S3 (push) — простая версия
+/// Синхронизация локальная папка -> S3 (всегда перезаписывает)
 async fn sync_local_to_s3(
     client: &Client,
     bucket: &str,
@@ -172,8 +150,6 @@ async fn sync_local_to_s3(
     let local_keys = scan_local_keys(local_dir, regex, logger)?;
     let s3_keys = list_s3_keys(client, bucket, prefix, regex, logger).await?;
     
-    let s3_set: std::collections::HashSet<String> = s3_keys.into_iter().collect();
-    
     for local_path in &local_keys {
         let rel_path = local_path.strip_prefix(local_dir)?;
         let s3_key = if prefix.is_empty() {
@@ -182,14 +158,13 @@ async fn sync_local_to_s3(
             format!("{}/{}", prefix, rel_path.display())
         };
         
-        if !s3_set.contains(&s3_key) {
-            logger.log(&format!("   Uploading: {:?} -> {}", rel_path, s3_key));
-            upload_to_s3(client, bucket, &s3_key, local_path, logger).await?;
-        }
+        logger.log(&format!("   Uploading: {:?} -> {}", rel_path, s3_key));
+        let body = ByteStream::from_path(local_path).await?;
+        client.put_object().bucket(bucket).key(&s3_key).body(body).send().await?;
     }
     
     // Удаляем из S3 объекты, которых нет локально
-    for s3_key in s3_set {
+    for s3_key in s3_keys {
         let rel_path = Path::new(&s3_key).strip_prefix(prefix).unwrap_or(Path::new(&s3_key));
         let local_path = local_dir.join(rel_path);
         if !local_path.exists() {
@@ -201,7 +176,7 @@ async fn sync_local_to_s3(
     Ok(())
 }
 
-/// Основная публичная функция (вызывается из watchdog)
+/// Основная публичная функция
 pub fn run_sync_cycle_safe(
     local_path: &PathBuf,
     remote_path: &str,
@@ -230,7 +205,7 @@ pub fn run_sync_cycle_safe(
             }
         })?;
     } else {
-        logger.log("   Local sync mode (placeholder)");
+        logger.log("   Local sync mode (not implemented in this version)");
     }
     
     Ok(())
