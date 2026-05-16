@@ -743,3 +743,37 @@ Test
 [2026-05-16 01:16:33]    Local found: "./local_data/test.txt"
 [2026-05-16 01:16:33] Sync cycle completed successfully
 [2026-05-16 01:16:33] Waiting 30000 ms...
+[2026-05-16 02:41:42] App started
+[2026-05-16 02:41:42] Sync mode: pull
+[2026-05-16 02:41:42] Watchdog starting with PID-file lock
+[2026-05-16 02:41:42] Another instance is already running (PID: 53773)
+[2026-05-16 02:41:42] Failed to acquire lock: Another instance is already running (PID: 53773)
+[2026-05-16 03:01:31] App started
+[2026-05-16 03:01:31] Sync mode: pull
+[2026-05-16 03:01:31] Watchdog starting with PID-file lock
+[2026-05-16 03:01:31] Single instance check passed (PID: 56360)
+[2026-05-16 03:01:31] Sync cycle started at SystemTime { tv_sec: 1778893291, tv_nsec: 12178836 }
+[2026-05-16 03:01:31]    Local: "./local_data"
+[2026-05-16 03:01:31]    Remote: "s3://dev-sync-bucket-odingrif-462292558512-eu-north-1-an/test-folder"
+[2026-05-16 03:01:31]    Mode: pull
+[2026-05-16 03:01:31]    Regex: .*\.txt$
+[2026-05-16 03:01:31]    S3 bucket: dev-sync-bucket-odingrif-462292558512-eu-north-1-an, prefix: test-folder
+[2026-05-16 03:01:31]    S3 found: test-folder/newfile.txt
+[2026-05-16 03:01:31]    S3 found: test-folder/test.txt
+[2026-05-16 03:01:31]    Local found: "./local_data/test.txt"
+[2026-05-16 03:01:31]    Downloading: test-folder/newfile.txt -> "newfile.txt"
+[2026-05-16 03:01:31]    Downloaded: test-folder/newfile.txt -> "./local_data/newfile.txt"
+[2026-05-16 03:01:31] Sync cycle completed successfully
+[2026-05-16 03:01:31] Waiting 30000 ms...
+[2026-05-16 03:02:01] Sync cycle started at SystemTime { tv_sec: 1778893321, tv_nsec: 303983169 }
+[2026-05-16 03:02:01]    Local: "./local_data"
+[2026-05-16 03:02:01]    Remote: "s3://dev-sync-bucket-odingrif-462292558512-eu-north-1-an/test-folder"
+[2026-05-16 03:02:01]    Mode: pull
+[2026-05-16 03:02:01]    Regex: .*\.txt$
+[2026-05-16 03:02:01]    S3 bucket: dev-sync-bucket-odingrif-462292558512-eu-north-1-an, prefix: test-folder
+[2026-05-16 03:02:01]    S3 found: test-folder/newfile.txt
+[2026-05-16 03:02:01]    S3 found: test-folder/test.txt
+[2026-05-16 03:02:01]    Local found: "./local_data/test.txt"
+[2026-05-16 03:02:01]    Local found: "./local_data/newfile.txt"
+[2026-05-16 03:02:01] Sync cycle completed successfully
+[2026-05-16 03:02:01] Waiting 30000 ms...
