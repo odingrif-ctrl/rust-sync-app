@@ -2,6 +2,7 @@ mod config;
 mod sync;
 mod watchdog;
 mod logger;
+mod timeout;
 
 use anyhow::Result;
 
